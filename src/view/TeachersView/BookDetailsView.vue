@@ -130,7 +130,7 @@ const getData = () => {
       </td>
     </tr>
 
-    <el-button size="small" v-if="book.books_is_in_library" @click="">
+    <el-button size="large" v-if="book.books_is_in_library" @click="" class="button">
       借书
     </el-button>
 
@@ -145,5 +145,10 @@ export default {
 </script>
 
 <style scoped>
-
+.button{
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
+}
 </style>

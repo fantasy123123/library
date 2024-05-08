@@ -199,9 +199,9 @@ const changeSelect = () => {
 
 
       <div style="display: flex;flex-direction: row;align-items: center;">
-          <h1 style="text-align: left;">用户</h1>
+          <h1 style="text-align: left;font-size: 30px">用户管理</h1>
           <!--      添加-->
-          <el-button type="primary" @click="add_dialog_visible = true" size="small" class="addButton">
+          <el-button type="primary" @click="add_dialog_visible = true" size="large" class="addButton">
               添加用户
           </el-button>
       </div>
@@ -211,12 +211,12 @@ const changeSelect = () => {
 
 
       <!--      搜索-->
-      <el-input v-model="input" placeholder="请输入" size="small" class="input-with-select">
+      <el-input v-model="input" placeholder="请输入" size="large" class="input-with-select">
 
         <template #prepend>
 
-          <el-select v-model="select" @change="changeSelect"
-                     placeholder="卡号" style="width: 75px">
+          <el-select v-model="select" size="large" @change="changeSelect"
+                     placeholder="卡号" style="width: 100px">
             <el-option label="卡号" value="0" />
             <el-option label="账号" value="1" />
 <!--            <el-option label="身份" value="2" />-->
@@ -255,26 +255,26 @@ const changeSelect = () => {
   <el-dialog title="添加用户" v-model="add_dialog_visible" width="30%" :before-close="handleClose">
     <el-form ref="ruleFormRef" :model="user_login_form" status-icon label-width="120px" class="demo-ruleForm">
       <el-form-item label="账号" prop="user_login_username">
-        <el-input v-model="user_login_form.user_login_username" autocomplete="off"/>
+        <el-input v-model="user_login_form.user_login_username" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item label="密码" prop="user_login_password">
-        <el-input v-model="user_login_form.user_login_password" autocomplete="off"/>
+        <el-input v-model="user_login_form.user_login_password" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
 
       <el-form-item label="身份" prop="user_login_role">
 <!--        <el-input v-model="user_login_form.user_login_role" autocomplete="off"/>-->
-        <el-select v-model="user_login_form.user_login_role" @change="changeSelect" placeholder="请选择">
+        <el-select v-model="user_login_form.user_login_role" @change="changeSelect" placeholder="请选择" size="large">
           <el-option label="教师" value="教师" />
           <el-option label="学生" value="学生" />
         </el-select>
       </el-form-item>
 
       <el-form-item label="金额" prop="user_login_money">
-        <el-input v-model="user_login_form.user_login_money" autocomplete="off"/>
+        <el-input v-model="user_login_form.user_login_money" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item>
-        <el-button @click="resetForm(ruleFormRef)">重置</el-button>
-        <el-button type="primary" @click="submitForm(ruleFormRef)">提交</el-button>
+        <el-button size="large" @click="resetForm(ruleFormRef)">重置</el-button>
+        <el-button size="large" type="primary" @click="submitForm(ruleFormRef)">提交</el-button>
       </el-form-item>
     </el-form>
   </el-dialog>
@@ -283,18 +283,18 @@ const changeSelect = () => {
   <el-dialog title="编辑用户信息" v-model="edit_dialog_visible" width="30%" :before-close="handleClose">
     <el-form ref="editFormRef" :model="user_login_form" status-icon label-width="120px" class="demo-ruleForm">
       <el-form-item label="卡号" prop="user_login_cardID">
-        <el-input v-model="user_login_form.user_login_cardID" autocomplete="off" disabled/>
+        <el-input v-model="user_login_form.user_login_cardID" autocomplete="off" disabled size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item label="账号" prop="user_login_account">
-        <el-input v-model="user_login_form.user_login_username" autocomplete="off"/>
+        <el-input v-model="user_login_form.user_login_username" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item label="密码" prop="user_login_password">
-        <el-input v-model="user_login_form.user_login_password" autocomplete="off"/>
+        <el-input v-model="user_login_form.user_login_password" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
 
       <el-form-item label="身份" prop="user_login_role">
 <!--        <el-input v-model="user_login_form.user_login_role" autocomplete="off"/>-->
-        <el-select v-model="user_login_form.user_login_role" @change="changeSelect" placeholder="{{user_login_form.user_login_role}}">
+        <el-select v-model="user_login_form.user_login_role" @change="changeSelect" placeholder="{{user_login_form.user_login_role}}" size="large">
           <el-option label="教师" value="教师" />
           <el-option label="学生" value="学生" />
         </el-select>
@@ -302,11 +302,11 @@ const changeSelect = () => {
       </el-form-item>
 
       <el-form-item label="金额" prop="user_login_money">
-        <el-input v-model="user_login_form.user_login_money" autocomplete="off"/>
+        <el-input v-model="user_login_form.user_login_money" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item>
-        <el-button @click="resetForm(editFormRef)">重置</el-button>
-        <el-button type="primary" @click="submitEditForm(editFormRef)">提交</el-button>
+        <el-button size="large" @click="resetForm(editFormRef)">重置</el-button>
+        <el-button size="large" type="primary" @click="submitEditForm(editFormRef)">提交</el-button>
       </el-form-item>
     </el-form>
   </el-dialog>
@@ -316,14 +316,15 @@ const changeSelect = () => {
 
 <style scoped>
 .input-with-select {
-  width: 300px;
+  width: 400px;
   background-color: var(--el-fill-color-blank);
 }
 
 .addButton {
-    background-color: #6D9773;
-    text-align: right;
-    justify-content: flex-end;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
+    font-size: 20px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h2>公告列表</h2>
+    <div style="margin: 0 auto;width: 95%;">
+      <h1 style="font-size: 30px">公告列表</h1>
     <el-table :data="announcement" style="margin: 20px auto;">
       <el-table-column label="时间" prop="admin_info_send_time" />
       <el-table-column label="标题" prop="admin_info_title" />

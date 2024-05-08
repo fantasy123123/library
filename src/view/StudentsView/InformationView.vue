@@ -455,21 +455,23 @@ import api from "../../api/index";
 </style> -->
 
 <template>
-    <div class="announcement-container">
-
-        <el-form ref="ruleFormRef" :model="announcement_form" status-icon label-width="120px" class="demo-ruleForm">
-            <h1 class="announcement-input-title">请输入用户名:</h1>
-            <el-form-item label="用户名" prop="qa_username" style="margin-right: 19px;">
-                <el-input v-model="announcement_form.qa_username" autocomplete="off" />
-            </el-form-item>
-            <h1 class="announcement-input-title">请输入咨询内容:</h1>
-            <el-form-item label="咨询内容" prop="qa_question">
-                <textarea v-model="announcement_form.qa_question" autocomplete="off" />
-            </el-form-item>
-            <el-form-item>
-                <el-button class="addbutton" type="primary" @click="sendFile(ruleFormRef)">提交</el-button>
-            </el-form-item>
-        </el-form>
+    <div style="margin: 0 auto;width: 95%;">
+        <h1 style="font-size: 30px">信件专区</h1>
+        <div style="margin-left: 9%">
+            <el-form ref="ruleFormRef" :model="announcement_form" status-icon label-width="120px" class="demo-ruleForm">
+                <h1 class="announcement-input-title">请输入用户名:</h1>
+                <el-form-item label="用户名" prop="qa_username">
+                    <el-input v-model="announcement_form.qa_username" autocomplete="off" style="width: 85%"/>
+                </el-form-item>
+                <h1 class="announcement-input-title">请输入咨询内容:</h1>
+                <el-form-item label="咨询内容" prop="qa_question">
+                    <textarea v-model="announcement_form.qa_question" autocomplete="off" />
+                </el-form-item>
+                <el-form-item>
+                    <el-button class="addbutton" size="large" type="primary" @click="sendFile(ruleFormRef)">提交</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
 
         <div class="announcement-list">
             <h2 class="announcement-list-title">用户咨询记录</h2>
@@ -540,14 +542,16 @@ const handleFault = (done) => {
 textarea {
     flex: 1;
     height: 150px;
-    margin-right: 20px;
+    margin-right:15%;
     padding: 10px;
     border: 1px solid #b4afaf;
 }
 .addbutton {
-    background-color: #6D9773;
-    text-align: left;
-    justify-content: flex-end;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
+    font-size: 20px;
+    margin-right: 15%;
 }
 </style>

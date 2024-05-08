@@ -56,11 +56,6 @@ const route = createRouter({
                     name: 'booksReport',
                     component: () => import('../view/AdminView/BookReportView.vue')
                 },
-                {
-                    path: 'scan_qrcode',
-                    name: 'scan_qrcode',
-                    component: () => import('../view/AdminView/ScanQrcode.vue')
-                }
             ]
         },
         {
@@ -104,7 +99,6 @@ const route = createRouter({
                 {
                     path: '/bookDetails',
                     name: 'bookDetails_stu',
-        
                     component: () => import('../view/StudentsView/BookDetailsView.vue'),
                 },
 
@@ -150,10 +144,12 @@ const route = createRouter({
                     path: 'file',
                     name: 'file_tea',
                     component: () => import('../view/TeachersView/FileView.vue')
+                },
+                {
+                    path: 'information',
+                    name: 'information_tea',
+                    component: () => import('../view/TeachersView/InformationView.vue')
                 }
-
-
-
             ]
 
 

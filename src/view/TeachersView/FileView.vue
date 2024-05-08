@@ -1,19 +1,19 @@
 <template>
-  <div class="announcement-container">
-    <h1 class="announcement-title">读者寄信</h1>
+    <div style="margin: 0 auto;width: 95%;">
+        <h1 style="font-size: 30px">读者寄信</h1>
 
     <div class="announcement-input">
-      <h2 class="announcement-input-title">在此输入:</h2>
-
-      <el-form ref="ruleFormRef" :model="File" status-icon label-width="120px" class="demo-ruleForm">
-
-        <el-form-item label="信件内容" prop="file_content">
-            <textarea v-model="File.user_letter_content" autocomplete="off"/>
-        </el-form-item>
-        <el-form-item>
-          <el-button type="primary" @click="sendLetter(ruleFormRef)"  size="small" class="addbutton">发送信件</el-button>
-        </el-form-item>
-      </el-form>
+      <div style="margin-left: 9%">
+          <h1 class="announcement-input-title">在此输入:</h1>
+          <el-form ref="ruleFormRef" :model="File" status-icon label-width="120px" class="demo-ruleForm">
+              <el-form-item label="信件内容" prop="file_content">
+                  <textarea v-model="File.user_letter_content" autocomplete="off"/>
+              </el-form-item>
+              <el-form-item>
+                  <el-button type="primary" @click="sendLetter(ruleFormRef)"  size="large" class="addbutton">发送信件</el-button>
+              </el-form-item>
+          </el-form>
+      </div>
     </div>
 
     <!--    <div class="announcement-list">-->
@@ -82,16 +82,16 @@ const handleFault = (done) => {
 textarea {
     flex: 1;
     height: 150px;
-    margin-right: 20px;
+    margin-right: 15%;
     padding: 10px;
     border: 1px solid #b4afaf;
 }
 .addbutton {
-    background-color: #6D9773;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
-    width: 100px;
-    height: 50px;
-    vertical-align:middle;
-    text-align: left;
+    font-size: 20px;
+    margin-right: 15%;
 }
 </style>

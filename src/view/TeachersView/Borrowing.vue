@@ -1,6 +1,6 @@
 <template>
   <div style="margin: 0 auto;width: 95%;">
-    <h1 style="text-align: left;">借阅中</h1>
+      <h1 style="font-size: 30px">借阅中</h1>
 
     <el-table :data="books_borrow" style="margin: 20px auto;">
       <el-table-column label="借阅书名" prop="books_borrow_book_name" />

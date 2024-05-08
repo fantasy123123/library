@@ -98,16 +98,16 @@ const changeSelect = () => {
 <template>
 
   <div style="margin: 0 auto;width: 95%;">
-
+      <h1 style="font-size: 30px">热门图书</h1>
     <div style="text-align: end;">
 
       <!--      搜索-->
-      <el-input v-model="input" placeholder="请输入" size="small" class="input-with-select">
+      <el-input v-model="input" placeholder="请输入" size="large" class="input-with-select">
 
         <template #prepend>
 
-          <el-select v-model="select" @change="changeSelect"
-                     placeholder="书名" style="width: 75px">
+          <el-select v-model="select" @change="changeSelect" size="large"
+                     placeholder="书名" style="width: 100px">
             <el-option label="书名" value="0" />
             <el-option label="书号" value="1" />
           </el-select>
@@ -144,8 +144,6 @@ const changeSelect = () => {
 
     <div v-if="table_visible">
       <!--    热门-->
-      <div><h2>热门图书</h2></div>
-
       <el-row style="margin-left: 200px;">
         <el-col :span="6" v-for="book in hotBooks" v-bind:key="book.books_book_id"
                 @click="handleDetail(book.books_book_id)" style="margin: 5px;">
@@ -202,7 +200,7 @@ export default {
 
 <style scoped>
 .input-with-select {
-  width: 300px;
+  width: 400px;
   background-color: var(--el-fill-color-blank);
 }
 

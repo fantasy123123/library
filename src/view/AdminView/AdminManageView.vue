@@ -191,18 +191,18 @@ const rowStyle = ({row, rowIndex}) => rowIndex%2 === 0 ? 'table-row-even' : 'tab
 <template>
   <div style="margin: 0 auto;width: 95%;">
       <div style="display: flex;flex-direction: row;align-items: center;">
-          <h1 style="text-align: left;">管理员</h1>
-          <el-button type="primary" @click="add_dialog_visible = true" size="small" class="addButton">
+          <h1 style="text-align: left;font-size: 30px">管理员管理</h1>
+          <el-button type="primary" @click="add_dialog_visible = true" size="large" class="addButton">
               添加管理员
           </el-button>
       </div>
 
     <div style="text-align: end;">
 
-      <el-input v-model="input" placeholder="请输入" size="small" class="input-with-select">
+      <el-input v-model="input" placeholder="请输入" size="large" class="input-with-select">
         <template #prepend>
           <!-- 注意，这里默认是直接搜索账号，无法选择，但是解开注释以后可以开启选择 -->
-          <el-select v-model="select" placeholder="账号" style="width: 75px">
+          <el-select v-model="select" placeholder="账号" size="large" style="width: 100px">
             <!-- <el-option label="账号" value="1" />
             <el-option label="密码" value="2" /> -->
           </el-select>
@@ -234,14 +234,14 @@ const rowStyle = ({row, rowIndex}) => rowIndex%2 === 0 ? 'table-row-even' : 'tab
   <el-dialog title="添加管理员" v-model="add_dialog_visible" width="30%" :before-close="handleClose">
     <el-form ref="ruleFormRef" :model="admin_form" status-icon label-width="120px" class="demo-ruleForm">
       <el-form-item label="账号" prop="admin_account">
-        <el-input v-model="admin_form.admin_account" autocomplete="off" />
+        <el-input v-model="admin_form.admin_account" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item label="密码" prop="admin_password">
-        <el-input v-model="admin_form.admin_password" autocomplete="off" />
+        <el-input v-model="admin_form.admin_password" autocomplete="off"  size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item>
-        <el-button @click="resetForm(ruleFormRef)">重置</el-button>
-        <el-button type="primary" @click="submitForm(ruleFormRef)">提交</el-button>
+        <el-button size="large" @click="resetForm(ruleFormRef)">重置</el-button>
+        <el-button size="large" type="primary" @click="submitForm(ruleFormRef)">提交</el-button>
       </el-form-item>
     </el-form>
   </el-dialog>
@@ -249,14 +249,14 @@ const rowStyle = ({row, rowIndex}) => rowIndex%2 === 0 ? 'table-row-even' : 'tab
   <el-dialog title="编辑管理员信息" v-model="edit_dialog_visible" width="30%" :before-close="handleClose">
     <el-form ref="editFormRef" :model="admin_form" status-icon label-width="120px" class="demo-ruleForm">
       <el-form-item label="账号" prop="admin_account">
-        <el-input v-model="admin_form.admin_account" autocomplete="off" disabled />
+        <el-input v-model="admin_form.admin_account" autocomplete="off" disabled size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item label="密码" prop="admin_password">
-        <el-input v-model="admin_form.admin_password" autocomplete="off" />
+        <el-input v-model="admin_form.admin_password" autocomplete="off" size="large" style="width: 80%"/>
       </el-form-item>
       <el-form-item>
-        <el-button @click="resetForm(editFormRef)">重置</el-button>
-        <el-button type="primary" @click="submitEditForm(editFormRef)">提交</el-button>
+        <el-button size="large" @click="resetForm(editFormRef)">重置</el-button>
+        <el-button size="large" type="primary" @click="submitEditForm(editFormRef)">提交</el-button>
       </el-form-item>
     </el-form>
   </el-dialog>
@@ -267,15 +267,16 @@ use in other components  -->
 <style scoped>
 
 .input-with-select {
-  width: 300px;
+  width: 400px;
   background-color: var(--el-fill-color-blank);
 }
 
 .addButton {
-    background-color: #6D9773;
-    text-align: right;
-    justify-content: flex-end;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
+    font-size: 20px;
 }
 
 /* 修改表格某一行的背景色 */

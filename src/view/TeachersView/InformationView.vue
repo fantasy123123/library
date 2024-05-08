@@ -1,29 +1,31 @@
 <template>
-    <div class="comment-container">
-      <h2 class="comment-title">用户咨询</h2>
-      <div class="comment">
-        <h2 class="comment-input-title">咨询区</h2>
-        <form class="comment-form" @submit.prevent="addComment">
-          <textarea v-model="state.newComment"></textarea>
-          <el-button type="primary" native-type="submit" class="comment-submit-btn">咨询</el-button>
-        </form>
-        <ul class="comment-list">
-          <li v-for="(comment, index) in state.comments" :key="index" class="comment-item">
-            <span class="comment-content">{{ comment }}</span>
-            <el-button class="comment-delete-btn" size="mini" type="danger" @click="deleteComment(index)">删除</el-button>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <div style="margin: 0 auto;width: 95%;">
+        <div class="comment-container">
+            <h1 style="font-size: 30px">用户咨询</h1>
+            <div class="comment">
+                <h2 class="comment-input-title">咨询区</h2>
+                <form class="comment-form" @submit.prevent="addComment">
+                    <textarea v-model="state.newComment"></textarea>
+                    <el-button type="primary" size="large" native-type="submit" class="comment-submit-btn">咨询</el-button>
+                </form>
+                <ul class="comment-list">
+                    <li v-for="(comment, index) in state.comments" :key="index" class="comment-item">
+                        <span class="comment-content">{{ comment }}</span>
+                        <el-button class="comment-delete-btn" size="mini" type="danger" @click="deleteComment(index)">删除</el-button>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-  <div class="question-list">
-    <h2 class="question-list-title">咨询记录</h2>
-    <el-table :data="questions" style="width: 100%">
-      <el-table-column align="left" label="姓名" prop="username"></el-table-column>
-      <el-table-column label="咨询内容" prop="question"></el-table-column>
-      <el-table-column label="回答" prop="answer"></el-table-column>
-    </el-table>
-  </div>
+        <div class="question-list">
+            <h2 class="question-list-title">咨询记录</h2>
+            <el-table :data="questions" style="width: 100%">
+                <el-table-column align="left" label="姓名" prop="username"></el-table-column>
+                <el-table-column label="咨询内容" prop="question"></el-table-column>
+                <el-table-column label="回答" prop="answer"></el-table-column>
+            </el-table>
+        </div>
+    </div>
 </template>
 
 
@@ -147,13 +149,13 @@ import api from "../../api/index";
 }
 
 .question-list-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .comment-container {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .comment-title {
@@ -170,9 +172,10 @@ import api from "../../api/index";
 }
 
 .comment-input-title {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+    margin-left: 20px;
 }
 
 .comment-form {
@@ -189,8 +192,10 @@ import api from "../../api/index";
 }
 
 .comment-submit-btn {
-  height: 50px;
-  width: 100px;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
+    font-size: 20px;
 }
 
 .comment-list {

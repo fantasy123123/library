@@ -1,6 +1,6 @@
 <template>
   <div style="margin: 0 auto;width: 95%;">
-    <h1 style="text-align: left;">借阅历史</h1>
+      <h1 style="font-size: 30px">借阅历史</h1>
 
     <el-table :data="history1" style="margin: 20px auto;">
       <el-table-column label="用户名" prop="requests_username" />

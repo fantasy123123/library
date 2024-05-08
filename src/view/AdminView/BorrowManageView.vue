@@ -1,12 +1,12 @@
 <template>
   <div style="margin: 0 auto;width: 95%;">
-    <h1 style="text-align: left;">借还管理</h1>
+      <h1 style="text-align: left;font-size: 30px">借还管理</h1>
 
     <div style="text-align: end;">
-      <el-input v-model="input" placeholder="请输入" size="small" class="input-with-select">
+      <el-input v-model="input" placeholder="请输入" size="large" class="input-with-select">
         <template #prepend>
           <!-- 注意，这里默认是直接搜索账号，无法选择，但是解开注释以后可以开启选择 -->
-          <el-select placeholder="书籍编号" style="width: 75px"></el-select>
+          <el-select placeholder="书籍编号" size="large"  style="width: 110px"></el-select>
         </template>
         <template #append>
           <el-button :icon="Search" @click="search(input)" />
@@ -15,8 +15,6 @@
 
       <video ref="video" width="640" height="480" autoplay style="display: none"></video>
     </div>
-
-
     <el-table :data="BooksBorrow" style="margin: 20px auto;">
       <el-table-column label="书籍编号" prop="books_borrow_book_id" />
       <el-table-column label="书名" prop="books_borrow_book_name" />
@@ -134,5 +132,8 @@ const returnButton = (index, scope) => {
 </script>
 
 <style scoped>
-
+.input-with-select {
+    width: 400px;
+    background-color: var(--el-fill-color-blank);
+}
 </style>

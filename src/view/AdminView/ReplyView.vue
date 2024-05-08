@@ -88,8 +88,8 @@
 
 <!--</style>-->
 <template>
-    <div class="question-list">
-        <h2 class="question-list-title">咨询记录</h2>
+    <div style="margin: 0 auto;width: 95%;">
+        <h1 class="question-list-title" style="font-size: 30px">咨询记录</h1>
         <el-table :data="questions" style="width: 100%">
             <el-table-column align="left" label="姓名" prop="qa_username"></el-table-column>
             <el-table-column label="咨询内容" prop="qa_question"></el-table-column>

@@ -8,36 +8,27 @@ import CharacterChart from "../../components/characterChart.vue";
 </script>
 
 <template>
-  <div style="margin: 0 auto;width: 96%;">
-    <h1 style="text-align: left;">图书报表</h1>
+  <div style="margin: 0 auto;width: 95%;">
+    <h1 style="text-align: left;font-size: 30px">图书报表</h1>
     <div class="area1">
       <div class="container1">
         <FiveChart/>
       </div>
     </div>
+      <div class="area3">
+          <ThreeChart/>
+      </div>
+      <div class="area4">
+          <FourChart/>
+      </div>
     <div class="area2">
       <OneChart/>
       <TwoChart/>
-    </div>
-    <div class="area3">
-      <ThreeChart/>
-      <div class="side1">
-        <character-chart/>
-      </div>
-    </div>
-    <div class="area4">
-        <FourChart/>
     </div>
   </div>
 </template>
 
 <style scoped>
-.side1{
-  width: 650px;
-  background-color: white;
-  margin: 20px;
-
-}
 .area1 {
   position: relative;
   display: flex;
@@ -67,7 +58,7 @@ import CharacterChart from "../../components/characterChart.vue";
   width: 100%;
   height: 510px;
   background-color: #eff0f6;
-  padding: 20px;
+  padding: 40px;
   box-sizing: border-box;
   justify-content: space-around;
 }

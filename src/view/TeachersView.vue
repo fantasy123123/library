@@ -48,6 +48,11 @@ export default {
                                             信件专区
                                     </RouterLink>
                                 </el-menu-item>
+                                <el-menu-item index="6">
+                                    <RouterLink to="/teachers/information" style="text-decoration: none;color: #0c1dfd;font-size: 20px;text-align: center;">
+                                        读者咨询
+                                    </RouterLink>
+                                </el-menu-item>
                             </el-menu-item-group>
                         </el-sub-menu>
                     </el-menu>

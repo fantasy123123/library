@@ -1,19 +1,21 @@
 <template>
-    <div class="announcement-container">
-
-        <el-form ref="ruleFormRef" :model="announcement_form" status-icon label-width="120px" class="demo-ruleForm">
-            <h1 class="announcement-input-title">请输入标题:</h1>
-            <el-form-item label="标题" prop="admin_info_title">
-                <el-input v-model="announcement_form.admin_info_title" autocomplete="off" />
-            </el-form-item>
-            <h1 class="announcement-input-title">请输入内容:</h1>
-            <el-form-item label="内容" prop="admin_info_content">
-                <textarea v-model="announcement_form.admin_info_content" autocomplete="off" />
-            </el-form-item>
-            <el-form-item>
-                <el-button class="addbutton" type="primary" @click="sendFile(ruleFormRef)">提交</el-button>
-            </el-form-item>
-        </el-form>
+    <div style="margin: 0 auto;width: 95%;">
+        <h1 class="question-list-title" style="font-size: 30px">公告编辑</h1>
+        <div style="margin-left: 9%">
+            <el-form ref="ruleFormRef" :model="announcement_form" status-icon label-width="120px" class="demo-ruleForm">
+                <h1 class="announcement-input-title">请输入标题:</h1>
+                <el-form-item label="标题" prop="admin_info_title">
+                    <el-input v-model="announcement_form.admin_info_title" autocomplete="off" style="width: 85%"/>
+                </el-form-item>
+                <h1 class="announcement-input-title">请输入内容:</h1>
+                <el-form-item label="内容" prop="admin_info_content">
+                    <textarea v-model="announcement_form.admin_info_content" autocomplete="off"/>
+                </el-form-item>
+                <el-form-item>
+                    <el-button class="addbutton" type="primary" size="large" @click="sendFile(ruleFormRef)">提交</el-button>
+                </el-form-item>
+            </el-form>
+        </div>
 
         <div class="announcement-list">
             <h2 class="announcement-list-title">公告发布记录</h2>
@@ -84,14 +86,16 @@ const handleFault = (done) => {
 textarea {
     flex: 1;
     height: 150px;
-    margin-right: 20px;
+    margin-right:15%;
     padding: 10px;
     border: 1px solid #b4afaf;
 }
 .addbutton {
-    background-color: #6D9773;
-    text-align: left;
-    justify-content: flex-end;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
+    font-size: 20px;
+    margin-right: 15%;
 }
 </style>

@@ -167,16 +167,17 @@ const search = (searchWord) => {
 
 <template>
     <div style="margin: 0 auto;width: 95%;">
-        <h1 style="text-align: left;">书籍管理</h1>
-
-        <div style="text-align: end;">
-            <el-button type="primary" @click="add_dialog_visible = true" size="small" class="addButton">
+        <div style="display: flex;flex-direction: row;align-items: center;">
+            <h1 style="text-align: left;font-size: 30px">书籍管理</h1>
+            <el-button type="primary" @click="add_dialog_visible = true" size="large" class="addButton">
                 添加新图书
             </el-button>
-            <el-input v-model="input" placeholder="请输入" size="small" class="input-with-select">
+        </div>
+        <div style="text-align: end;">
+            <el-input v-model="input" placeholder="请输入" size="large" class="input-with-select">
                 <template #prepend>
                     <!-- 注意，这里默认是直接搜索账号，无法选择，但是解开注释以后可以开启选择 -->
-                    <el-select v-model="select" placeholder="图书编号" style="width: 75px">
+                    <el-select v-model="select" size="large" placeholder="图书编号" style="width:110px">
                         <!-- <el-option label="账号" value="1" />
                         <el-option label="密码" value="2" /> -->
                     </el-select>
@@ -186,6 +187,7 @@ const search = (searchWord) => {
                 </template>
             </el-input>
         </div>
+
         <el-table :data="books" style="margin: 20px auto;">
             <!--
                 这里做了修改，但是这个prop不知道在哪里改
@@ -226,22 +228,22 @@ const search = (searchWord) => {
                 同样的，这里做了修改，但是不知道prop去哪里改
             -->
             <el-form-item label="图书编号" prop="book_id">
-                <el-input v-model="books_form.books_book_id" autocomplete="off" />
+                <el-input v-model="books_form.books_book_id" autocomplete="off" size="large" style="width: 80%" />
             </el-form-item>
             <el-form-item label="ISBN" prop="book_isbn">
-                <el-input v-model="books_form.books_isbn" autocomplete="off" />
+                <el-input v-model="books_form.books_isbn" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图书名称" prop="book_name">
-                <el-input v-model="books_form.books_name" autocomplete="off" />
+                <el-input v-model="books_form.books_name" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图书作者" prop="book_author">
-                <el-input v-model="books_form.books_author" autocomplete="off" />
+                <el-input v-model="books_form.books_author" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="是否在馆" prop="book_is_in_library">
-                <el-input v-model="books_form.books_is_in_library" autocomplete="off" />
+                <el-input v-model="books_form.books_is_in_library" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图书类别" prop="book_category">
-                <el-input v-model="books_form.books_category" autocomplete="off" />
+                <el-input v-model="books_form.books_category" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图片" prop="book_img">
               <input type="file"
@@ -250,20 +252,20 @@ const search = (searchWord) => {
             </el-form-item>
 
             <el-form-item label="借阅次数" prop="book_borrow_times">
-                <el-input v-model="books_form.books_borrow_times" autocomplete="off" />
+                <el-input v-model="books_form.books_borrow_times" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="出版社" prop="book_press">
-                <el-input v-model="books_form.books_press" autocomplete="off" />
+                <el-input v-model="books_form.books_press" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="简介" prop="book_brief">
-                <el-input v-model="books_form.books_brief" autocomplete="off" />
+                <el-input v-model="books_form.books_brief" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="页数" prop="book_pages">
-                <el-input v-model="books_form.books_pages" autocomplete="off" />
+                <el-input v-model="books_form.books_pages" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item>
-                <el-button @click="resetForm(ruleFormRef)">重置</el-button>
-                <el-button type="primary" @click="submitForm(ruleFormRef)">提交</el-button>
+                <el-button size="large" @click="resetForm(ruleFormRef)">重置</el-button>
+                <el-button size="large" type="primary" @click="submitForm(ruleFormRef)">提交</el-button>
             </el-form-item>
         </el-form>
     </el-dialog>
@@ -271,41 +273,41 @@ const search = (searchWord) => {
     <el-dialog title="编辑图书信息" v-model="edit_dialog_visible" width="30%" :before-close="handleClose">
         <el-form ref="editFormRef" :model="books_form" status-icon label-width="120px" class="demo-ruleForm">
             <el-form-item label="图书编号" prop="book_id">
-                <el-input v-model="books_form.books_book_id" autocomplete="off" disabled/>
+                <el-input v-model="books_form.books_book_id" autocomplete="off" disabled size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="ISBN" prop="book_isbn">
-                <el-input v-model="books_form.books_isbn" autocomplete="off" />
+                <el-input v-model="books_form.books_isbn" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图书名称" prop="book_name">
-                <el-input v-model="books_form.books_name" autocomplete="off" />
+                <el-input v-model="books_form.books_name" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图书作者" prop="book_author">
-                <el-input v-model="books_form.books_author" autocomplete="off" />
+                <el-input v-model="books_form.books_author" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="是否在馆" prop="book_is_in_library">
-                <el-input v-model="books_form.books_is_in_library" autocomplete="off" />
+                <el-input v-model="books_form.books_is_in_library" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图书类别" prop="book_category">
-                <el-input v-model="books_form.books_category" autocomplete="off" />
+                <el-input v-model="books_form.books_category" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="图片" prop="book_img">
-                <el-input v-model="books_form.books_img" autocomplete="off" />
+                <el-input v-model="books_form.books_img" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="借阅次数" prop="book_borrow_times">
-                <el-input v-model="books_form.books_borrow_times" autocomplete="off" />
+                <el-input v-model="books_form.books_borrow_times" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="出版社" prop="book_press">
-                <el-input v-model="books_form.books_press" autocomplete="off" />
+                <el-input v-model="books_form.books_press" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="简介" prop="book_brief">
-                <el-input v-model="books_form.books_brief" autocomplete="off" />
+                <el-input v-model="books_form.books_brief" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item label="页数" prop="book_pages">
-                <el-input v-model="books_form.books_pages" autocomplete="off" />
+                <el-input v-model="books_form.books_pages" autocomplete="off" size="large" style="width: 80%"/>
             </el-form-item>
             <el-form-item>
-                <el-button @click="resetForm(editFormRef)">重置</el-button>
-                <el-button type="primary" @click="submitEditForm(editFormRef)">提交</el-button>
+                <el-button size="large" @click="resetForm(editFormRef)">重置</el-button>
+                <el-button size="large" type="primary" @click="submitEditForm(editFormRef)">提交</el-button>
             </el-form-item>
         </el-form>
     </el-dialog>
@@ -315,14 +317,15 @@ const search = (searchWord) => {
 use in other components  -->
 <style scoped>
 .input-with-select {
-    width: 300px;
+    width: 400px;
     background-color: var(--el-fill-color-blank);
 }
 
 .addButton {
-    background-color: #6D9773;
-    text-align: right;
-    justify-content: flex-end;
+    background-color: #4a9dfa;
+    text-align: center;
+    justify-content: center;
     margin-left: auto;
+    font-size: 20px;
 }
 </style>

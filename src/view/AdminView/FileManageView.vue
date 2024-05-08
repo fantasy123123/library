@@ -1,6 +1,6 @@
 <template>
-  <div class="announcement-list">
-    <h2 class="announcement-list-title">读者来信记录</h2>
+    <div style="margin: 0 auto;width: 95%;">
+    <h1 style="font-size: 30px">读者来信记录</h1>
     <el-table :data="files" style="width: 100%">
       <el-table-column align="left" label="时间" prop="user_letter_send_time"></el-table-column>
       <el-table-column label="信件内容" prop="user_letter_content"></el-table-column>
